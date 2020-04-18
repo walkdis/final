@@ -1,0 +1,1 @@
+position1 company1 name1 second_name1 surname1 от surname2 name2 second_name2 ЗАЯВЛЕНИЕ Прошу принять меня с date1 на работу в company1 в отдел обслуживания на должность position2 в порядке перевода из общества с ограниченной ответственностью company2. date2 /surname2/ name2 second_name2 surname2

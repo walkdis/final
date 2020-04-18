@@ -1,0 +1,1 @@
+position1 company1 name1 second_name1 surname1 от surname2 name2 second_name2 ЗАЯВЛЕНИЕ Прошу принять меня с date1 года в company1 на должность position2 с должностным окладом в money1 (money2) рублей в месяц с испытательным сроком длительностью money4 (money4) месяца. date2 /surname2/ name2 second_name2 surname2
