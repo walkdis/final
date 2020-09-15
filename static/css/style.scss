@@ -1,0 +1,171 @@
+@import "sanity.ui.variables";
+@import "sanity.ui.mixins";
+@import "sanity.ui.general";
+@import "sanity.ui.dialog";
+
+$header_height: 6vh;
+$section_height: 94vh;
+html, body {
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: 400;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: $color_white-dark;
+}
+
+@include user-select-color($color_black-light, $color_white);
+.header {
+  padding: 0;
+  background: $color_white;
+  height: $header_height;
+  box-shadow: $box-shadow_xs;
+}
+
+.btn {
+}
+
+.marker {
+  &.marker_yellow {
+    display: inline;
+    background: $color_yellow;
+  }
+}
+
+.input_text {
+  height: 100%;
+
+  .input_text__wrapper {
+    height: 100%;
+  }
+
+  .input_text__input {
+    resize: none;
+    padding: $size_m;
+    font-size: 18px;
+    line-height: 140%;
+    font-weight: 400;
+    height: 100%;
+    border-color: $color_gray-light;
+
+    &:focus {
+      border-color: $color_gray-medium !important;
+    }
+
+    &:read-only {
+      color: $color_black;
+    }
+
+    &:disabled {
+      overflow: hidden;
+    }
+  }
+}
+
+.section {
+  height: $section_height;
+  padding: $size_l;
+
+  .section__wrapper {
+    height: calc(100% - #{$size_l} - #{$size_l})
+  }
+
+  .section__inner {
+    height: 600px;
+  }
+
+  .section__item {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+
+    .section__item__control {
+      position: absolute;
+      top: $size_xs;
+      right: $size_xs;
+      background: $color_gray;
+
+      .btn {
+        background: $color_gray;
+        padding: $size_xxxs;
+
+        .btn__icon {
+          width: 30px;
+          height: 30px;
+        }
+
+        &:hover, &:focus {
+          background: $color_gray-dark;
+
+          .btn__icon {
+            > svg {
+              fill: $color_white;
+            }
+          }
+        }
+
+        &.btn_disabled {
+          pointer-events: none !important;
+          cursor: not-allowed !important;
+          color: $color_gray-medium !important;
+          border-color: $color_gray-light !important;
+          background: $color_gray-light !important;
+
+          .btn__icon {
+            > svg {
+              fill: $color_gray-medium !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.section__item_output {
+      .section__item_output__area {
+        overflow-y: auto;
+        resize: none;
+        padding: $size_xl $size_m $size_m $size_m;
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 400;
+        height: 100%;
+        border: 1px solid;
+        border-color: $color_gray-light;
+        background: $color_white;
+      }
+    }
+  }
+
+  .section__control {
+    margin-top: $size_m;
+    height: 50px;
+    min-height: 50px;
+
+    > * {
+      margin-right: $size_m;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($color_white, .6);
+}
+
+.sanity_ui_dialog {
+  .sanity_ui_dialog__content {
+    padding: $size_xl;
+    width: 65vh;
+  }
+}

@@ -1,1 +1,1 @@
-position1 company1 name1 second_name1 surname1 от name2 surname2, гражданина Евросоюза (Италия) ЗАЯВЛЕНИЕ Прошу принять меня на работу в company1 на должность position2 с date1. date2 /surname2/ name2 surname2
+position company name second_name surname от name surname, гражданина Евросоюза (Италия) ЗАЯВЛЕНИЕ Прошу принять меня на работу в company на должность position с date. date /surname/ name surname

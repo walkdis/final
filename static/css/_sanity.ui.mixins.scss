@@ -1,0 +1,561 @@
+// Sanity.UI: Mixins
+// Version: 1.2.6 (14/04/2020)
+@mixin box-sizing($size) {
+  box-sizing:         $size;
+  -webkit-box-sizing: $size;
+  -moz-box-sizing:    $size;
+}
+@mixin scrollbar($width: 10px, $track: $color_gray-light, $thumb: $color_black, $thumb_hover: $color_black-light) {
+  @include scrollbar-width($width);
+  @include scrollbar-track($track);
+  @include scrollbar-thumb($thumb, $thumb_hover);
+}
+@mixin scrollbar-width($width: 0) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+}
+@mixin scrollbar-track($background: $color_gray-light) {
+  &::-webkit-scrollbar-track {
+    background: $background;
+  }
+}
+@mixin scrollbar-thumb($background: $color_black, $background_hover: $color_black-light) {
+  &::-webkit-scrollbar-thumb {
+    background: $background;
+    &:hover {
+      background: $background_hover;
+    }
+  }
+}
+@mixin user-select($val: none) {
+  user-select:           $val;
+  -webkit-touch-callout: $val;
+  -webkit-user-select:   $val;
+  -khtml-user-select:    $val;
+  -moz-user-select:      $val;
+  -ms-user-select:       $val;
+}
+@mixin user-drag($val: none) {
+  -webkit-user-drag: $val;
+  -khtml-user-drag:  $val;
+  -moz-user-drag:    $val;
+  -o-user-drag:      $val;
+  user-drag:         $val;
+}
+@mixin antialias {
+  font-smoothing:          antialiased;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin appearance($val: none) {
+  -webkit-appearance: $val;
+  -moz-appearance:    $val;
+  appearance:         $val;
+}
+@mixin column($count, $gap) {
+  -webkit-column-count: $count;
+  -webkit-column-gap:   $gap;
+  -moz-column-count:    $count;
+  -moz-column-gap:      $gap;
+  -o-column-count:      $count;
+  -o-column-gap:        $gap;
+  column-count:         $count;
+  column-gap:           $gap;
+}
+@mixin transition($anim...) {
+  -webkit-transition: $anim;
+  -moz-transition:    $anim;
+  -o-transition:      $anim;
+  transition:         $anim;
+}
+@mixin transition-duration($duration) {
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration:    $duration;
+  -o-transition-duration:      $duration;
+  transition-duration:         $duration;
+}
+@mixin transition-property($property...) {
+  -webkit-transition-property: $property;
+  -moz-transition-property:    $property;
+  -o-transition-property:      $property;
+  transition-property:         $property;
+}
+@mixin background-gradient($args...) {
+  background-image: -o-linear-gradient($args);
+  background-image: -moz-linear-gradient($args);
+  background-image: -webkit-linear-gradient($args);
+  background-image: linear-gradient($args);
+}
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content:  $content;
+  display:  $display;
+  position: $pos;
+}
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+@mixin user-select-color($background, $color) {
+  ::selection {
+    background: $background;
+    color:      $color;
+  }
+  ::-moz-selection {
+    background: $background;
+    color:      $color;
+  }
+}
+@mixin transform($transform...) {
+  -webkit-transform: $transform;
+  -moz-transform:    $transform;
+  transform:         $transform;
+}
+@mixin transform-style($style) {
+  -webkit-transform-style: $style;
+  -moz-transform-style:    $style;
+  transform-style:         $style;
+}
+@mixin backface-visibility($visibility) {
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility:    $visibility;
+  backface-visibility:         $visibility;
+}
+@mixin inline-flex($important: false) {
+  @if $important {
+    display: -webkit-inline-flex !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  } @else {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+}
+@mixin flex($important: false) {
+  @if $important {
+    display: flex !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+  } @else {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+  }
+}
+@mixin flex-column($important: false) {
+  @include flex($important);
+  @if $important {
+    -ms-flex-direction:     column !important;
+    -webkit-flex-direction: column !important;
+    flex-direction:         column !important;
+  } @else {
+    -ms-flex-direction:     column;
+    -webkit-flex-direction: column;
+    flex-direction:         column;
+  }
+}
+@mixin flex-column-reversed($important: false) {
+  @include flex($important);
+  @if $important {
+    -ms-flex-direction:     column-reverse !important;
+    -webkit-flex-direction: column-reverse !important;
+    flex-direction:         column-reverse !important;
+  } @else {
+    -ms-flex-direction:     column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction:         column-reverse;
+  }
+}
+@mixin inline-flex-column($important: false) {
+  @include inline-flex($important);
+  @if $important {
+    -ms-flex-direction:     column !important;
+    -webkit-flex-direction: column !important;
+    flex-direction:         column !important;
+  } @else {
+    -ms-flex-direction:     column;
+    -webkit-flex-direction: column;
+    flex-direction:         column;
+  }
+}
+@mixin inline-flex-column-reversed($important: false) {
+  @include inline-flex($important);
+  @if $important {
+    -ms-flex-direction:     column-reverse !important;
+    -webkit-flex-direction: column-reverse !important;
+    flex-direction:         column-reverse !important;
+  } @else {
+    -ms-flex-direction:     column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction:         column-reverse;
+  }
+}
+@mixin flex-row($important: false) {
+  @include flex($important);
+  @if $important {
+    -ms-flex-direction:     row !important;
+    -webkit-flex-direction: row !important;
+    flex-direction:         row !important;
+  } @else {
+    -ms-flex-direction:     row;
+    -webkit-flex-direction: row;
+    flex-direction:         row;
+  }
+}
+@mixin flex-row-reversed($important: false) {
+  @include flex($important);
+  @if $important {
+    -ms-flex-direction:     row-reverse !important;
+    -webkit-flex-direction: row-reverse !important;
+    flex-direction:         row-reverse !important;
+  } @else {
+    -ms-flex-direction:     row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction:         row-reverse;
+  }
+}
+@mixin inline-flex-row($important: false) {
+  @include inline-flex($important);
+  @if $important {
+    -ms-flex-direction:     row !important;
+    -webkit-flex-direction: row !important;
+    flex-direction:         row !important;
+  } @else {
+    -ms-flex-direction:     row;
+    -webkit-flex-direction: row;
+    flex-direction:         row;
+  }
+}
+@mixin inline-flex-row-reversed($important: false) {
+  @include inline-flex($important);
+  @if $important {
+    -ms-flex-direction:     row-reverse !important;
+    -webkit-flex-direction: row-reverse !important;
+    flex-direction:         row-reverse !important;
+  } @else {
+    -ms-flex-direction:     row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction:         row-reverse;
+  }
+}
+@mixin flex-wrap($wrap: wrap) {
+  flex-wrap:         $wrap;
+  -ms-flex-wrap:     $wrap;
+  -webkit-flex-wrap: $wrap;
+}
+@mixin text-truncate($truncation-boundary) {
+  max-width:     $truncation-boundary;
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+}
+@mixin text-truncate-off($max-width: 100%) {
+  max-width:     $max-width;
+  white-space:   normal;
+  overflow:      auto;
+  text-overflow: unset;
+}
+@mixin font-inherit {
+  font-size:      inherit;
+  line-height:    inherit;
+  font-weight:    inherit;
+  font-family:    inherit;
+  color:          inherit;
+  letter-spacing: inherit;
+  font-style:     inherit;
+}
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+  @include pseudo($pos: $position);
+  width:  0;
+  height: 0;
+  @if $round {
+    border-radius: 3px;
+  }
+  @if $direction == down {
+    border-left:   $size solid transparent;
+    border-right:  $size solid transparent;
+    border-top:    $size solid $color;
+    margin-top:    0 - round( $size / 2.5 );
+  } @else if $direction == up {
+    border-left:   $size solid transparent;
+    border-right:  $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round( $size / 2.5 );
+  } @else if $direction == right {
+    border-top:    $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left:   $size solid $color;
+    margin-right:  -$size;
+  } @else if $direction == left {
+    border-top:    $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right:  $size solid $color;
+    margin-left:   -$size;
+  }
+}
+@mixin breakpoint($min: 0, $max: 0) {
+  $breaks: ('phone_xs': 374px, 'phone_s': 549px, 'phone': 767px, 'tablet': 991px, 'mdpi': 1279px);
+  $type:   type-of($min);
+  @if $type == string {
+    $query: 'all' !default;
+    @if map_has_key($breaks, $min) and map_has_key($breaks, $max) {
+      $query: "(min-width: #{map_get($breaks, $min) + 1}) and (max-width: #{map_get($breaks, $max)})";
+    } @else if map_has_key($breaks, $min) and not map_has_key($breaks, $max) {
+      $query: "(min-width: #{map_get($breaks, $min) + 1})";
+    } @else if (not map_has_key($breaks, $min)) and map_has_key($breaks, $max) {
+      $query: "(max-width: #{map_get($breaks, $max)})";
+    } @else {
+      @warn "Check mixin supports";
+    }
+    @media #{$query} {
+      @content
+    }
+  } @else if $type == number {
+    $query: "all" !default;
+    @if $min != 0 and $max != 0 {
+      $query: "(min-width: #{$min}px) and (max-width: #{$max}px)";
+    } @else if $min != 0 and $max == 0 {
+      $query: "(min-width: #{$min}px)";
+    } @else if $min == 0 and $max != 0 {
+      $query: "(max-width: #{$max}px)";
+    }
+    @media #{$query} {
+      @content;
+    }
+  }
+}
+@mixin resets($font, $color) {
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin:         0;
+    padding:        0;
+    border:         0;
+    vertical-align: baseline;
+    font-family:    $font;
+    color:          $color;
+  }
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  blockquote, q {
+    quotes:  none;
+    display: block;
+    &:before, &:after {
+      content: unset;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing:  0;
+  }
+  *, *::before, *::after {
+    @include box-sizing(border-box);
+    outline: unset;
+  }
+}
+@mixin resets_general() {
+  /* Resets */
+  *, *::before, *::after {
+    @include box-sizing(border-box);
+  }
+  ul[class], ol[class] {
+    padding:    0;
+    list-style: none;
+  }
+  body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+  }
+  body {
+    min-height:      100vh;
+    scroll-behavior: smooth;
+    text-rendering:  optimizeSpeed;
+    line-height:     1.5;
+  }
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  img {
+    max-width: 100%;
+    display:   block;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration:        0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration:       0.01ms !important;
+      scroll-behavior:           auto !important;
+    }
+  }
+}
+@mixin keyframe($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation_name} {
+    @content;
+  }
+  @-o-keyframes #{$animation_name} {
+    @content;
+  }
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+@mixin animation($animation, $delay: 0ms, $duration: 0ms, $timing: linear, $mode: forwards, $count: 1) {
+  @include animation_name($animation);
+  @include animation_duration($duration);
+  @include animation_timing-function($timing);
+  @include animation_delay($delay);
+  @include animation_fill-mode($mode);
+  @include animation_iteration-count($count);
+}
+@mixin animation_string($string) {
+  animation:         $string;
+  -webkit-animation: $string;
+  -moz-animation:    $string;
+  -o-animation:      $string;
+  -ms-animation:     $string;
+}
+@mixin animation_name($animation) {
+  -webkit-animation-name: $animation;
+  -moz-animation-name:    $animation;
+  -o-animation-name:      $animation;
+  animation-name:         $animation;
+}
+@mixin animation_fill-mode($mode) {
+  -webkit-animation-fill-mode: $mode; /* this prevents the animation from restarting! */
+  -moz-animation-fill-mode:    $mode; /* this prevents the animation from restarting! */
+  -o-animation-fill-mode:      $mode; /* this prevents the animation from restarting! */
+  animation-fill-mode:         $mode; /* this prevents the animation from restarting! */
+}
+@mixin animation_duration($duration) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration:    $duration;
+  -o-animation-duration:      $duration;
+  animation-duration:         $duration;
+}
+@mixin animation_iteration-count($count) {
+  -webkit-animation-iteration-count: $count;
+  -moz-animation-iteration-count:    $count;
+  -o-animation-iteration-count:      $count;
+  animation-iteration-count:         $count;
+}
+@mixin animation_timing-function($timing) {
+  -webkit-animation-timing-function: $timing;
+  -moz-animation-timing-function:    $timing;
+  -o-animation-timing-function:      $timing;
+  animation-timing-function:         $timing;
+}
+@mixin animation_delay($delay) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay:    $delay;
+  -o-animation-delay:      $delay;
+  animation-delay:         $delay;
+}
+@mixin animation_play-state($state) {
+  animation-play-state:         $state;
+  -moz-animation-play-state:    $state;
+  -o-animation-play-state:      $state;
+  -webkit-animation-play-state: $state;
+}
+@mixin animation_off($important: false) {
+  @if $important {
+    -webkit-animation: none !important;
+    -moz-animation:    none !important;
+    -o-animation:      none !important;
+    -ms-animation:     none !important;
+    animation:         none !important;
+  } @else {
+    -webkit-animation: none;
+    -moz-animation:    none;
+    -o-animation:      none;
+    -ms-animation:     none;
+    animation:         none;
+  }
+}
+@mixin background-image_cover($url, $color: gray) {
+  background:      url($url) $color center no-repeat;
+  background-size: cover;
+}
+@mixin width($count, $total, $middle: 0) {
+  @if $middle != 0 {
+    width: calc(#{$count / $total * 100 + "%"} - #{$middle});
+  } @else {
+    width: $count/$total * 100%;
+  }
+}
+@mixin grid {
+  display: -ms-grid;
+  display: grid;
+}
+@mixin grid-template-columns($columns...) {
+  -ms-grid-columns:      $columns;
+  grid-template-columns: $columns;
+}
+@mixin grid-template-rows($rows...) {
+  -ms-grid-rows:      $rows;
+  grid-template-rows: $rows;
+}
+// Can be used in combination with above grid-template-X mixins.
+// @include grid-template-columns(10px grid-repeat(4, 20px) 30px);
+// @include grid-template-columns(10px 20px 20px 20px 20px 30px);
+@function grid-repeat($repeat, $stuff: 1fr) {
+  $list: ();
+  @for $i from 1 through $repeat {
+    $list: append($list, $stuff, space);
+  }
+  @return $list;
+}
+@mixin grid-column($col-start, $col-end) {
+  -ms-grid-column:      $col-start;
+  -ms-grid-column-span: $col-end - $col-start;
+  grid-column:          #{$col-start} / #{$col-end};
+}
+@mixin grid-row($row-start, $row-end) {
+  -ms-grid-row:      $row-start;
+  -ms-grid-row-span: $row-end - $row-start;
+  grid-row:          #{$row-start} / #{$row-end};
+}
+@mixin grid-align-self($value) {
+  -ms-grid-row-align: $value;
+  align-self:         $value;
+}
+@mixin grid-justify-self($value) {
+  -ms-grid-column-align: $value;
+  justify-self:          $value;
+}
+@mixin writing-mode($mode) {
+  writing-mode:         $mode;
+  -ms-writing-mode:     $mode;
+  -webkit-writing-mode: $mode;
+}
+@mixin line-clamp($numLines : 1, $lineHeight: 1) {
+  overflow:           hidden;
+  text-overflow:      -o-ellipsis-lastline;
+  text-overflow:      ellipsis;
+  display:            block;
+  /* autoprefixer: off */
+  display:            -webkit-box;
+  -webkit-line-clamp: $numLines;
+  -webkit-box-orient: vertical;
+  max-height:         $numLines * $lineHeight + unquote('em');
+}
+@mixin touch-action($val: none) {
+  -ms-touch-action: $val;
+  touch-action:     $val;
+}

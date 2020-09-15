@@ -60,10 +60,18 @@ def get_name(file_name):
     f = open('generate/' + file_name + '.txt', encoding='utf-8', mode='r')
     content = f.read()
     contents = content.split()
-    number = randrange(2)
+    number = randrange(10)
     name_to_me = {
         0: contents[randrange(len(contents))],
-        1: contents[randrange(len(contents))] + '-' + contents[randrange(len(contents))]
+        1: contents[randrange(len(contents))],
+        2: contents[randrange(len(contents))],
+        3: contents[randrange(len(contents))],
+        4: contents[randrange(len(contents))],
+        5: contents[randrange(len(contents))],
+        6: contents[randrange(len(contents))],
+        7: contents[randrange(len(contents))],
+        8: contents[randrange(len(contents))],
+        9: contents[randrange(len(contents))] + '-' + contents[randrange(len(contents))]
     }
     name = name_to_me[number]
     name = choose_case(name)
@@ -97,7 +105,6 @@ def get_date():
                                                                                                   'двенадцатого',
              'тысяча девятьсот девяносто шестого', 'две тысячи двадцать первого', 'тясяча девятьстот'
                                                                                   ' девяносто второго']
-    endings = [' года', ' г.', ' г', ' год.', '']
     number = randrange(6)
     month = randrange(12) + 1
     day = randrange(31) + 1
@@ -110,15 +117,14 @@ def get_date():
     else:
         day_result = str(day)
     date_for_me = {
-        0: day_result + '.' + result + '.' + str(randrange(2020)),
-        1: day_result + '/' + result + '/' + str(randrange(2020)),
-        2: day_result + ' ' + months[randrange(len(months))] + ' ' + str(randrange(2020)),
+        0: day_result + '.' + result + '.' + str(randrange(150) + 1870),
+        1: day_result + '/' + result + '/' + str(randrange(150) + 1870),
+        2: day_result + ' ' + months[randrange(len(months))] + ' ' + str(randrange(150) + 1870),
         3: days[randrange(len(days))] + ' ' + months[randrange(len(months))] + ' ' + years[randrange(len(years))],
-        4: day_result + ' ' + result + ' ' + str(randrange(2020)),
-        5: day_result + '/' + months[randrange(len(months))] + '/' + str(randrange(2020))
+        4: day_result + ' ' + result + ' ' + str(randrange(150) + 1870),
+        5: day_result + '/' + months[randrange(len(months))] + '/' + str(randrange(150) + 1870)
     }
-    date = date_for_me[number] + endings[randrange(len(endings))]
-    return date
+    return date_for_me[number]
 
 
 def get_auto():

@@ -1,0 +1,60 @@
+// Sanity.UI: Variables
+// Version: 1.2.4 (03/04/2020)
+// General
+$width: 94%;
+$middle: 1%;
+// Fonts
+$font_primary: 'Futura PT', 'Tahoma', sans-serif;
+$font_secondary: 'Futura PT', 'Tahoma', sans-serif;
+// Colors
+$color_black-light: #0e111d;
+$color_black: black;
+$color_white: white;
+$color_white-dark: #fafafa;
+$color_gray-light: #e8edf6;
+$color_gray: #cccccc;
+$color_gray-medium: #c2c8d4;
+$color_gray-dark: #32343f;
+$color_red: #ef3024;
+$color_red-dark: #870000;
+$color_yellow: #ffc81f;
+$color_emerald: #0be999;
+$color_green: #0a8a52;
+$color_green-dark: #054328;
+$color_blue: #0c73a1;
+// Colors main
+$color_primary-light: #ff6464;
+$color_primary: #ec2838;
+$color_primary-dark: #e63342;
+$color_secondary-light: #7a0000;
+$color_secondary: #7a0000;
+$color_secondary-dark: #520000;
+// Box shadow
+$box_shadow_xl: 0 4px 25px 2.15px rgba($color_black, 0.1);
+$box-shadow_l: 0 4px 25px 2.15px rgba($color_black, 0.1);
+$box-shadow_m: 0 4px 25px 2.15px rgba($color_black, 0.1);
+$box-shadow_s: 0px 4px 20px 2.15px rgba($color_black, 0.1);
+$box-shadow_xs: 0px 10px 20px 0px rgba($color_black, 0.05);
+// Sizes
+$size_xxxs: 5px;
+$size_xxs: 10px;
+$size_xs: 15px;
+$size_s: 20px;
+$size_m: 30px;
+$size_l: 40px;
+$size_xl: 60px;
+$size_xxl: 80px;
+$size_xxxl: 120px;
+// Transition
+$transition_in_duration: .25s;
+$transition_in_function: linear;
+$transition_out_duration: .15s;
+$transition_out_function: linear;
+$transition_in: all $transition_in_duration $transition_in_function;
+$transition_out: all $transition_out_duration $transition_out_function;
+// Border radius
+$border-radius_xs: 5px;
+$border-radius_s: 10px;
+$border_radius_m: 20px;
+$border_radius_l: 30px;
+$border-radius_xl: 50px;

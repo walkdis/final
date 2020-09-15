@@ -1,0 +1,69 @@
+// Sanity.UI: Dialog
+// Version: 1.2.5 (14/04/2020)
+html {
+  &.overflow_hidden--sanity_ui_dialog {
+    overflow: hidden;
+    body {
+      overflow: hidden;
+    }
+  }
+}
+[data-sanity_ui_dialog], .sanity_ui_dialog {
+  display:         none;
+  position:        fixed;
+  top:             0;
+  left:            0;
+  width:           100%;
+  height:          100%;
+  z-index:         99;
+  visibility:      hidden;
+  justify-content: center;
+  &:before {
+    content:    '';
+    position:   absolute;
+    height:     100%;
+    left:       0;
+    top:        0;
+    width:      100%;
+    background: rgba(0, 0, 0, .5);
+  }
+  .sanity_ui_dialog__close {
+    position: absolute;
+    top:      0;
+    right:    0;
+  }
+  .sanity_ui_dialog__content {
+    position:   relative;
+    margin:     0 auto;
+    overflow-y: auto;
+    width:      $width;
+    padding:    $size_s;
+    background: $color_white;
+  }
+  &.sanity_ui_dialog_display {
+    @include flex-column;
+    visibility: visible;
+  }
+  @include keyframe(sanity_ui_dialog_in) {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @include keyframe(sanity_ui_dialog_out) {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  &.sanity_ui_dialog_in {
+    @include animation(sanity_ui_dialog_in, 0s, .2s, ease, none);
+  }
+  &.sanity_ui_dialog_out {
+    @include animation(sanity_ui_dialog_out, 0s, .2s, ease, forwards);
+  }
+}

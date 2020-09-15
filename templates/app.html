@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="format-detection" content="telephone=no">
+    <!-- Classic browser icons -->
+    <link rel="icon shortcut" type="image/png" sizes="48x48" href="/static/favicon-48x48.png">
+    <link rel="icon shortcut" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon shortcut" type="image/png" sizes="24x24" href="/static/favicon-24x24.png">
+    <link rel="icon shortcut" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <!-- Ico -->
+    <link rel="icon shortcut" href="/static/favicon.ico">
+    <!-- Title -->
+    <title>Personal Data app</title>
+    <!-- Style -->
+    <!-- Font -->
+    <link href="https://fonts.sanity.cc?family=FuturaPT&weight=400,700" type="text/css" rel="stylesheet">
+    <!-- Style -->
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<header class="header col flex_center user-select_none">
+    <div class="header__wrapper row flex_space-between flex_align-items_center">
+        <div class="text_l text_weight_bold header__logo">LOGO</div>
+        <a class="btn btn_default" href="#dialog_help">Справка</a>
+    </div>
+</header>
+<section class="section">
+    <div class="section__wrapper col flex_space-around">
+        <div class="section__inner width_1 row flex_wrap flex_space-between flex_align-items_start">
+            <div class="width_6-12_m section__item col">
+                <div class="input_text input_text_fixed_width width_1 col">
+                    <div class="input_text__wrapper">
+                        <textarea name="text" id="input" class="input_text__input" placeholder="Например:">СТАРШИЙ БУХГАЛТЕР 5-20.by Амелия НИКИТИЧНА-ПОТАПОВИЧ КОЗЫРЕВ-ВЫСОЦКИЙ от Каролина максимов, гражданина Евросоюза (Италия) ЗАЯВЛЕНИЕ Прошу принять меня на работу в "СПЕЦАВТОТРАНС" на должность НАЧАЛЬНИК ИНСТРУМЕНТАЛЬНОГО ОТДЕЛА с 09 марта 562. седьмое августа две тысячи восьмого /ЧЕРНОВ/ РОМАН-МАЙЯ Зимин-Соловьев</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="width_6-12_m section__item section__item_output col">
+                <div class="section__item__control row">
+                    <button class="btn copy">
+                        <i class="btn__icon">
+                            <svg viewBox="-66 0 569 569.286" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m.109375 66.382812v493.132813c0 5.238281 4.246094 9.484375 9.484375 9.484375h360.367188c5.234374 0 9.480468-4.246094 9.480468-9.484375v-398.296875c0-.210938-.101562-.390625-.121094-.597656-.046874-.832032-.210937-1.652344-.484374-2.4375-.105469-.304688-.179688-.597656-.3125-.894532-.460938-1.03125-1.101563-1.972656-1.898438-2.777343l-94.832031-94.832031c-.804688-.800782-1.75-1.441407-2.789063-1.898438-.285156-.121094-.574218-.222656-.871094-.3125-.792968-.273438-1.617187-.4375-2.457031-.492188-.160156.027344-.347656-.074218-.546875-.074218h-265.535156c-5.238281 0-9.484375 4.242187-9.484375 9.480468zm346.957031 85.351563h-62.457031v-62.457031zm-327.992187-75.867187h246.570312v85.351562c0 5.234375 4.246094 9.480469 9.480469 9.480469h85.351562v379.335937h-341.402343zm0 0"/>
+                                <path d="m398.410156 493.132812v18.964844h28.449219c5.238281 0 9.484375-4.242187 9.484375-9.480468v-493.132813c0-5.238281-4.246094-9.484375-9.484375-9.484375h-360.367187c-5.238282 0-9.484376 4.246094-9.484376 9.484375v28.449219h18.96875v-18.96875h341.398438v474.167968zm0 0"/>
+                                <path d="m75.976562 189.667969h227.597657v18.964843h-227.597657zm0 0"/>
+                                <path d="m75.976562 132.765625h75.867188v18.96875h-75.867188zm0 0"/>
+                                <path d="m75.976562 246.566406h151.734376v18.96875h-151.734376zm0 0"/>
+                                <path d="m246.675781 246.566406h56.898438v18.96875h-56.898438zm0 0"/>
+                                <path d="m75.976562 303.464844h227.597657v18.96875h-227.597657zm0 0"/>
+                                <path d="m75.976562 417.265625h227.597657v18.96875h-227.597657zm0 0"/>
+                                <path d="m161.324219 360.367188h142.25v18.964843h-142.25zm0 0"/>
+                                <path d="m75.976562 360.367188h66.382813v18.964843h-66.382813zm0 0"/>
+                                <path d="m75.976562 474.167969h37.933594v18.964843h-37.933594zm0 0"/>
+                                <path d="m132.875 474.167969h170.699219v18.964843h-170.699219zm0 0"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <!--
+                    <button class="btn print" data-sanity_ui_tooltip="Распечатать">
+                        <i class="btn__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M472.178,133.907h-54.303V35.132c0-9.425-7.641-17.067-17.067-17.067H111.192c-9.425,0-17.067,7.641-17.067,17.067v98.775H39.822C17.864,133.907,0,151.772,0,173.73v171.702c0,21.958,17.864,39.822,39.822,39.822h54.306v91.614c0,9.425,7.641,17.067,17.067,17.067h289.61c9.425,0,17.067-7.641,17.067-17.067v-91.614h54.306c21.958,0,39.822-17.864,39.822-39.822V173.73C512,151.773,494.136,133.907,472.178,133.907z M128.258,52.199h255.483v81.708H128.258V52.199z M383.738,459.801H128.262c0-3.335,0-135.503,0-139.628h255.477C383.738,324.402,383.738,456.594,383.738,459.801z M477.867,345.433c0,3.137-2.552,5.689-5.689,5.689h-54.306v-48.014c0-9.425-7.641-17.067-17.067-17.067h-289.61c-9.425,0-17.067,7.641-17.067,17.067v48.014H39.822c-3.137,0-5.689-2.552-5.689-5.689V173.731c0-3.137,2.552-5.689,5.689-5.689c13.094,0,419.57,0,432.356,0c3.137,0,5.689,2.552,5.689,5.689V345.433z"/>
+                                <path d="M400.808,199.988h-43.443c-9.425,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h43.443c9.425,0,17.067-7.641,17.067-17.067S410.234,199.988,400.808,199.988z"/>
+                                <path d="M329.956,399.834H182.044c-9.425,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h147.911c9.425,0,17.067-7.641,17.067-17.067S339.381,399.834,329.956,399.834z"/>
+                                <path d="M329.956,346.006H182.044c-9.425,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h147.911c9.425,0,17.067-7.641,17.067-17.067S339.381,346.006,329.956,346.006z"/>
+                            </svg>
+                        </i>
+                    </button>
+                    -->
+                    <button class="btn download">
+                        <i class="btn__icon">
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"/>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+                <div id="output" class="section__item_output__area"></div>
+            </div>
+        </div>
+        <div class="width_1 row flex_center flex_align-items_center section__control">
+            <button class="btn btn_default submit" data-type="default">Закрыть ПД</button>
+            <button class="btn btn_default submit" data-type="simple">Просто ПД</button>
+            <button class="btn btn_default submit" data-type="highlight">Выделить ПД</button>
+        </div>
+    </div>
+</section>
+<div data-sanity_ui_dialog="help">
+    <h2 class="text_xl" style="margin-bottom: 20px">Справка</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+        eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+</div>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/scripts.js"></script>
+</body>
+</html>

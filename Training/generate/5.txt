@@ -1,1 +1,1 @@
-position1 company name1 second_name1 surname1 от surname2 name2 second_name2 ЗАЯВЛЕНИЕ Прошу перевести меня с date1 на должность position2 с date2 в связи с наличием вакантного места и соответствием моей квалификации и опыта для ее занятия. date3 /surname2/ name2 second_name2 surname2
+position company name second_name surname от surname name second_name ЗАЯВЛЕНИЕ Прошу перевести меня с date на должность position с date в связи с наличием вакантного места и соответствием моей квалификации и опыта для ее занятия. date /surname/ name second_name surname

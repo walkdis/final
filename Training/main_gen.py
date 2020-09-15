@@ -1,69 +1,69 @@
 from Training.generation_data import *
 import re
 
-for i in range(10):
-    for j in range(1):
+for i in range(21):
+    for j in range(2):
         f = open("generate/" + str(i+1) + '.txt', encoding='utf-8', mode='r')
         content = f.read()
         contents = content.split()
         final_text = ''
         answer_text = ''
         for b in range(len(contents)):
-            if re.match(r'.*surname\d+.*', contents[b]):
+            if re.match(r'.*surname.*', contents[b]):
                 changing = get_name('surname')
-                final_text = final_text + ' ' + re.sub(r'surname\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'surname', changing, contents[b])
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*name\d+.*', contents[b]) and not re.match(r'.*second_name\d+.*', contents[b]):
+            elif re.match(r'.*name.*', contents[b]) and not re.match(r'.*second_name.*', contents[b]):
                 changing = get_name('name')
-                final_text = final_text + ' ' + re.sub(r'name\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'name', changing, contents[b])
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*second_name\d+.*', contents[b]):
+            elif re.match(r'.*second_name.*', contents[b]):
                 changing = get_name('second')
-                final_text = final_text + ' ' + re.sub(r'second_name\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'second_name', changing, contents[b])
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*numbers\d+.*', contents[b]):
+            elif re.match(r'.*numbers.*', contents[b]):
                 changing = get_numbers()
-                final_text = final_text + ' ' + re.sub(r'numbers\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'numbers', changing, contents[b])
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*phone\d+.*', contents[b]):
+            elif re.match(r'.*phone.*', contents[b]):
                 changing = get_phone()
-                final_text = final_text + ' ' + re.sub(r'phone\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'phone', changing, contents[b])
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*mail\d+.*', contents[b]):
+            elif re.match(r'.*mail.*', contents[b]):
                 changing = get_mail()
-                final_text = final_text + ' ' + re.sub(r'mail\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'mail', changing, contents[b])
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*pas\d+.*', contents[b]):
+            elif re.match(r'.*pas.*', contents[b]):
                 changing = get_name('pas')
                 final_text = final_text + ' ' + changing
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*position\d+.*', contents[b]):
+            elif re.match(r'.*position.*', contents[b]):
                 changing = get_mult('position')
-                final_text = final_text + ' ' + re.sub(r'position\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'position', changing, contents[b])
                 answer_text = answer_text + get_uno(changing)
-            elif re.match(r'.*company\d+.*', contents[b]):
+            elif re.match(r'.*company.*', contents[b]):
                 changing = get_mult('company')
-                final_text = final_text + ' ' + re.sub(r'company\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'company', changing, contents[b])
                 answer_text = answer_text + get_uno(changing)
-            elif re.match(r'.*date\d+.*', contents[b]):
+            elif re.match(r'.*date.*', contents[b]):
                 changing = get_date()
-                final_text = final_text + ' ' + re.sub(r'date\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'date', changing, contents[b])
                 answer_text = answer_text + get_uno(changing)
-            elif re.match(r'.*adres\d+.*', contents[b]):
+            elif re.match(r'.*adres.*', contents[b]):
                 changing = get_mult('adres')
-                final_text = final_text + ' ' + re.sub(r'adres\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'adres', changing, contents[b])
                 answer_text = answer_text + get_uno(changing)
-            elif re.match(r'.*money\d+.*', contents[b]):
+            elif re.match(r'.*money.*', contents[b]):
                 changing = get_money()
-                final_text = final_text + ' ' + re.sub(r'money\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'money', changing, contents[b])
                 answer_text = answer_text + get_uno(changing)
-            elif re.match(r'.*gender\d+.*', contents[b]):
+            elif re.match(r'.*gender.*', contents[b]):
                 changing = get_gender()
-                final_text = final_text + ' ' + re.sub(r'gender\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'gender', changing, contents[b])
                 answer_text = answer_text + ' 1'
-            elif re.match(r'.*auto\d+.*', contents[b]):
+            elif re.match(r'.*auto.*', contents[b]):
                 changing = get_auto()
-                final_text = final_text + ' ' + re.sub(r'auto\d+', changing, contents[b])
+                final_text = final_text + ' ' + re.sub(r'auto', changing, contents[b])
                 answer_text = answer_text + get_uno(changing)
             else:
                 final_text = final_text + ' ' + contents[b]

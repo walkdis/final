@@ -1,0 +1,2579 @@
+// Sanity.UI: General
+// Version: 1.2.17 (15/04/2020)
+@include resets_general();
+// General
+html {
+  font-size:   14px;
+  line-height: 120%;
+  font-weight: 400;
+  font-family: $font_primary;
+  color:       $color_black;
+  &.overflow_hidden {
+    overflow: hidden;
+    body {
+      overflow: hidden;
+    }
+  }
+}
+a {
+  cursor: pointer;
+}
+// Text <p>, <h1>...<h6>, ...
+.text {
+  &_xxxs {
+    font-size:   0.4rem;
+    line-height: 1;
+  }
+  &_xxs {
+    font-size:   0.6rem;
+    line-height: 1;
+  }
+  &_xs {
+    font-size:   0.8rem;
+    line-height: 1;
+  }
+  &_s {
+    font-size:   1rem;
+    line-height: 1;
+  }
+  &_m {
+    font-size:   1.2rem;
+    line-height: 1;
+  }
+  &_l {
+    font-size:   1.8rem;
+    line-height: 1;
+  }
+  &_xl {
+    font-size:   2rem;
+    line-height: 1;
+  }
+  &_xxl {
+    font-size:   3rem;
+    line-height: 1;
+  }
+  &_xxxl {
+    font-size:   4rem;
+    line-height: 1;
+  }
+}
+.text_weight {
+  &_regular {
+    font-weight: 400;
+  }
+  &_medium {
+    font-weight: 500;
+  }
+  &_bold {
+    font-weight: 600;
+  }
+  &_bold_extra {
+    font-weight: 900;
+  }
+}
+.text_style {
+  &_italic {
+    font-style: italic;
+  }
+}
+.text_decoration {
+  &_line-through {
+    text-decoration: line-through;
+  }
+}
+.text_align {
+  &_left {
+    text-align: left;
+  }
+  &_right {
+    text-align: right;
+  }
+  &_center {
+    text-align: center;
+  }
+  // Small PC
+  @include breakpoint(tablet, mdpi) {
+    &_left_mdpi {
+      text-align: left;
+    }
+    &_right_mdpi {
+      text-align: right;
+    }
+    &_center_mdpi {
+      text-align: center;
+    }
+  }
+  // Tablet
+  @include breakpoint(phone, tablet) {
+    &_left_tablet {
+      text-align: left;
+    }
+    &_right_tablet {
+      text-align: right;
+    }
+    &_center_tablet {
+      text-align: center;
+    }
+  }
+  // Phone
+  @include breakpoint(phone_s, phone) {
+    &_left_phone {
+      text-align: left;
+    }
+    &_right_phone {
+      text-align: right;
+    }
+    &_center_phone {
+      text-align: center;
+    }
+  }
+  // Small phone
+  @include breakpoint(none, phone_s) {
+    &_left_phone_s {
+      text-align: left;
+    }
+    &_right_phone_s {
+      text-align: right;
+    }
+    &_center_phone_s {
+      text-align: center;
+    }
+  }
+  // All phones
+  @include breakpoint(none, phone) {
+    &_left_phone_all {
+      text-align: left;
+    }
+    &_right_phone_all {
+      text-align: right;
+    }
+    &_center_phone_all {
+      text-align: center;
+    }
+  }
+}
+.text_transform {
+  &_uppercase {
+    text-transform: uppercase;
+  }
+}
+.letter_spacing {
+  &_0 {
+    letter-spacing: 0;
+  }
+  &_xxxs {
+    letter-spacing: -20px;
+  }
+  &_xxs {
+    letter-spacing: -15px;
+  }
+  &_xs {
+    letter-spacing: -10px;
+  }
+  &_s {
+    letter-spacing: -5px;
+  }
+  &_m {
+    letter-spacing: 2px;
+  }
+  &_l {
+    letter-spacing: 5px;
+  }
+  &_xl {
+    letter-spacing: 10px;
+  }
+  &_xxl {
+    letter-spacing: 15px;
+  }
+  &_xxxl {
+    letter-spacing: 20px;
+  }
+}
+// Marker <mark>
+.marker {
+  padding: 2px 4px;
+  display: inline-block;
+  &.marker_primary {
+    background: $color_primary;
+    color:      $color_white;
+  }
+  &.marker_gray {
+    color:      $color_gray-medium;
+    background: $color_gray;
+  }
+  &.marker_white {
+    color:      $color_primary;
+    background: $color_white;
+  }
+  &.marker_black {
+    color:      $color_white;
+    background: $color_black;
+  }
+  &.marker_big {
+    padding: $size_xs;
+  }
+}
+// Colors
+.color {
+  &_primary {
+    color: $color_primary;
+    &_light {
+      color: $color_primary-light;
+    }
+    &_dark {
+      color: $color_primary-dark;
+    }
+  }
+  &_secondary {
+    color: $color_secondary;
+    &_light {
+      color: $color_secondary-light;
+    }
+    &_dark {
+      color: $color_secondary-dark;
+    }
+  }
+  &_black {
+    color: $color_black;
+    &_light {
+      color: $color_black-light;
+    }
+  }
+  &_gray {
+    color: $color_gray;
+    &_light {
+      color: $color_gray-light;
+    }
+    &_medium {
+      color: $color_gray-medium;
+    }
+    &_dark {
+      color: $color_gray-dark;
+    }
+  }
+  &_white {
+    color: $color_white;
+    &_dark {
+      color: $color_white-dark;
+    }
+  }
+}
+// List
+.list {
+  .list__item {
+    list-style:    outside none;
+    margin-left:   0;
+    padding-left:  1rem;
+    position:      relative;
+    margin-bottom: $size_xxs;
+    &:before {
+      width:       1rem;
+      height:      1rem;
+      content:     "\2022";
+      font-size:   inherit;
+      font-weight: 700;
+      color:       $color_black;
+      line-height: inherit;
+      top:         0;
+      left:        0;
+      position:    absolute;
+    }
+    &:last-child, &:only-child {
+      margin-bottom: 0;
+    }
+  }
+  &.list_col {
+    &.list_col_2 {
+      @include column(2, $size_s);
+      .list__item {
+        break-inside: avoid-column;
+      }
+    }
+    &.list_col_3 {
+      @include column(3, $size_s);
+      .list__item {
+        break-inside: avoid-column;
+      }
+    }
+    &.list_col_4 {
+      @include column(4, $size_xs);
+      .list__item {
+        break-inside: avoid-column;
+      }
+    }
+    // Small PC
+    @include breakpoint(tablet, mdpi) {
+      &.list_col_none_mdpi {
+        @include column(1, 0);
+      }
+    }
+    // Tablet
+    @include breakpoint(phone, tablet) {
+      &.list_col_none_tablet {
+        @include column(1, 0);
+      }
+    }
+    // Phone
+    @include breakpoint(phone_s, phone) {
+      &.list_col_none_phone {
+        @include column(1, 0);
+      }
+    }
+    @include breakpoint(none, phone_s) {
+      &.list_col_none_phone_s {
+        @include column(1, 0);
+      }
+    }
+    @include breakpoint(none, phone) {
+      &.list_col_none_phone_all {
+        @include column(1, 0);
+      }
+    }
+  }
+  &.list_none {
+    .list__item {
+      padding-left: 0;
+      &:before {
+        content: none;
+      }
+    }
+  }
+  &.list_line {
+    .list__item {
+      position:     relative;
+      list-style:   outside none;
+      margin-left:  0;
+      padding-left: $size_s;
+      &:before {
+        display:     inline-block;
+        width:       15px;
+        content:     "—";
+        font-size:   inherit;
+        font-weight: inherit;
+        color:       inherit;
+        line-height: inherit;
+        height:      15px;
+        top:         0;
+        left:        0;
+        position:    absolute;
+      }
+    }
+  }
+  &[aria-label] {
+    &:before {
+      content:       attr(aria-label);
+      display:       block;
+      margin-bottom: $size_xs;
+    }
+  }
+  &[aria-label=""] {
+    &:before {
+      display: none !important;
+    }
+  }
+}
+// Link
+.link {
+  color:           inherit;
+  text-decoration: inherit;
+  outline:         none;
+  &.link_default {
+    color:           $color_black;
+    text-decoration: none;
+    @include transition(color $transition_in_duration $transition_in_function);
+    &:hover, &:focus {
+      @include transition(color $transition_out_duration $transition_out_function);
+      .link__icon {
+        > svg {
+          @include transition(fill $transition_out_duration $transition_out_function);
+        }
+      }
+    }
+    &:hover {
+      color: $color_primary;
+      .link__icon {
+        > svg {
+          fill: $color_primary;
+        }
+      }
+    }
+    &:focus {
+      color:   $color_secondary;
+      outline: none;
+      .link__icon {
+        > svg {
+          fill: $color_secondary;
+        }
+      }
+    }
+  }
+  .link__icon {
+    @include flex-row();
+    align-items: center;
+    font-style:  inherit;
+    > svg {
+      width:  1rem;
+      height: 1rem;
+      fill:   $color_black;
+      @include transition(fill $transition_in_duration $transition_in_function);
+      &:first-child {
+        margin-right: $size_xxs;
+      }
+      &:last-child {
+        margin-left: $size_xxs;
+      }
+    }
+    .link__icon__text {
+    }
+  }
+}
+// Other
+.whitespace_no-wrap {
+  white-space: nowrap;
+}
+// Width
+.width {
+  &_0 {
+    width: 0;
+  }
+  &_1 {
+    width: 100%;
+  }
+  &_1-12 {
+    @include width(1, 12);
+    &_m {
+      @include width(1, 12, $middle);
+    }
+  }
+  &_2-12, &_1-6 {
+    @include width(2, 12);
+    &_m {
+      @include width(2, 12, $middle);
+    }
+  }
+  &_3-12, &_1-4 {
+    @include width(1, 4);
+    &_m {
+      @include width(1, 4, $middle);
+    }
+  }
+  &_4-12, &_1-3 {
+    @include width(1, 3);
+    &_m {
+      @include width(1, 3, $middle);
+    }
+  }
+  &_5-12 {
+    @include width(5, 12);
+    &_m {
+      @include width(5, 12, $middle);
+    }
+  }
+  &_6-12, &_1-2, &_5-10 {
+    @include width(1, 2);
+    &_m {
+      @include width(1, 2, $middle);
+    }
+  }
+  &_7-12 {
+    @include width(7, 12);
+    &_m {
+      @include width(7, 12, $middle);
+    }
+  }
+  &_8-12, &_2-3 {
+    @include width(8, 12);
+    &_m {
+      @include width(8, 12, $middle);
+    }
+  }
+  &_9-12, &_3-4 {
+    @include width(3, 4);
+    &_m {
+      @include width(3, 4, $middle);
+    }
+  }
+  &_10-12, &_5-6 {
+    @include width(5, 6);
+    &_m {
+      @include width(5, 6, $middle);
+    }
+  }
+  &_11-12 {
+    @include width(11, 12);
+    &_m {
+      @include width(11, 12, $middle);
+    }
+  }
+  &_1-10 {
+    @include width(1, 10);
+    &_m {
+      @include width(1, 10, $middle);
+    }
+  }
+  &_2-10, &_1-5 {
+    @include width(1, 5);
+    &_m {
+      @include width(1, 5, $middle);
+    }
+  }
+  &_3-10 {
+    @include width(3, 10);
+    &_m {
+      @include width(3, 10, $middle);
+    }
+  }
+  &_4-10, &_2-5 {
+    @include width(4, 10);
+    &_m {
+      @include width(4, 10, $middle);
+    }
+  }
+  &_6-10, &_3-5 {
+    @include width(6, 10);
+    &_m {
+      @include width(6, 10, $middle);
+    }
+  }
+  &_7-10 {
+    @include width(7, 10);
+    &_m {
+      @include width(7, 10, $middle);
+    }
+  }
+  &_8-10, &_4-5 {
+    @include width(8, 10);
+    &_m {
+      @include width(8, 10, $middle);
+    }
+  }
+  &_9-10 {
+    @include width(9, 10);
+    &_m {
+      @include width(9, 10, $middle);
+    }
+  }
+  // Small PC
+  @include breakpoint(tablet, mdpi) {
+    &_1_mdpi {
+      width: 100%;
+    }
+    &_1-12_mdpi {
+      @include width(1, 12);
+      &_m {
+        @include width(1, 12, $middle);
+      }
+    }
+    &_2-12_mdpi, &_1-6_mdpi {
+      @include width(2, 12);
+      &_m {
+        @include width(2, 12, $middle);
+      }
+    }
+    &_3-12_mdpi, &_1-4_mdpi {
+      @include width(3, 12);
+      &_m {
+        @include width(3, 12, $middle);
+      }
+    }
+    &_4-12_mdpi, &_1-3_mdpi {
+      @include width(4, 12);
+      &_m {
+        @include width(4, 12, $middle);
+      }
+    }
+    &_5-12_mdpi {
+      @include width(5, 12);
+      &_m {
+        @include width(5, 12, $middle);
+      }
+    }
+    &_6-12_mdpi, &_1-2_mdpi, &_5-10_mdpi {
+      @include width(1, 2);
+      &_m {
+        @include width(1, 2, $middle);
+      }
+    }
+    &_7-12_mdpi {
+      @include width(7, 12);
+      &_m {
+        @include width(7, 12, $middle);
+      }
+    }
+    &_8-12_mdpi, &_2-3_mdpi {
+      @include width(8, 12);
+      &_m {
+        @include width(8, 12, $middle);
+      }
+    }
+    &_9-12_mdpi, &_3-4_mdpi {
+      @include width(9, 12);
+      &_m {
+        @include width(9, 12, $middle);
+      }
+    }
+    &_10-12_mdpi, &_5-6_mdpi {
+      @include width(10, 12);
+      &_m {
+        @include width(10, 12, $middle);
+      }
+    }
+    &_11-12_mdpi {
+      @include width(11, 12);
+      &_m {
+        @include width(11, 12, $middle);
+      }
+    }
+    &_1-10_mdpi {
+      @include width(1, 10);
+      &_m {
+        @include width(1, 10, $middle);
+      }
+    }
+    &_2-10_mdpi, &_1-5_mdpi {
+      @include width(1, 5);
+      &_m {
+        @include width(1, 5, $middle);
+      }
+    }
+    &_3-10_mdpi {
+      @include width(3, 10);
+      &_m {
+        @include width(3, 10, $middle);
+      }
+    }
+    &_4-10_mdpi, &_2-5_mdpi {
+      @include width(4, 10);
+      &_m {
+        @include width(4, 10, $middle);
+      }
+    }
+    &_6-10_mdpi, &_3-5_mdpi {
+      @include width(6, 10);
+      &_m {
+        @include width(6, 10, $middle);
+      }
+    }
+    &_7-10_mdpi {
+      @include width(7, 10);
+      &_m {
+        @include width(7, 10, $middle);
+      }
+    }
+    &_8-10_mdpi, &_4-5_mdpi {
+      @include width(8, 10);
+      &_m {
+        @include width(8, 10, $middle);
+      }
+    }
+    &_9-10_mdpi {
+      @include width(9, 10);
+      &_m {
+        @include width(9, 10, $middle);
+      }
+    }
+  }
+  // Tablet
+  @include breakpoint(phone, tablet) {
+    &_1_tablet {
+      width: 100%;
+    }
+    &_1-12_tablet {
+      @include width(1, 12);
+      &_m {
+        @include width(1, 12, $middle);
+      }
+    }
+    &_2-12_tablet, &_width_1-6_tablet {
+      @include width(2, 12);
+      &_m {
+        @include width(2, 12, $middle);
+      }
+    }
+    &_3-12_tablet, &_1-4_tablet {
+      @include width(3, 12);
+      &_m {
+        @include width(3, 12, $middle);
+      }
+    }
+    &_4-12_tablet, &_1-3_tablet {
+      @include width(4, 12);
+      &_m {
+        @include width(4, 12, $middle);
+      }
+    }
+    &_5-12_tablet {
+      @include width(5, 12);
+      &_m {
+        @include width(5, 12, $middle);
+      }
+    }
+    &_6-12_tablet, &_1-2_tablet, &_5-10_tablet {
+      @include width(1, 2);
+      &_m {
+        @include width(1, 2, $middle);
+      }
+    }
+    &_7-12_tablet {
+      @include width(7, 12);
+      &_m {
+        @include width(7, 12, $middle);
+      }
+    }
+    &_8-12_tablet, &_2-3_tablet {
+      @include width(8, 12);
+      &_m {
+        @include width(8, 12, $middle);
+      }
+    }
+    &_9-12_tablet, &_3-4_tablet {
+      @include width(9, 12);
+      &_m {
+        @include width(9, 12, $middle);
+      }
+    }
+    &_10-12_tablet, &_5-6_tablet {
+      @include width(10, 12);
+      &_m {
+        @include width(10, 12, $middle);
+      }
+    }
+    &_11-12_tablet {
+      @include width(11, 12);
+      &_m {
+        @include width(11, 12, $middle);
+      }
+    }
+    &_1-10_tablet {
+      @include width(1, 10);
+      &_m {
+        @include width(1, 10, $middle);
+      }
+    }
+    &_2-10_tablet, &_1-5_tablet {
+      @include width(1, 5);
+      &_m {
+        @include width(1, 5, $middle);
+      }
+    }
+    &_3-10_tablet {
+      @include width(3, 10);
+      &_m {
+        @include width(3, 10, $middle);
+      }
+    }
+    &_4-10_tablet, &_2-5_tablet {
+      @include width(4, 10);
+      &_m {
+        @include width(4, 10, $middle);
+      }
+    }
+    &_6-10_tablet, &_3-5_tablet {
+      @include width(6, 10);
+      &_m {
+        @include width(6, 10, $middle);
+      }
+    }
+    &_7-10_tablet {
+      @include width(7, 10);
+      &_m {
+        @include width(7, 10, $middle);
+      }
+    }
+    &_8-10_tablet, &_4-5_tablet {
+      @include width(8, 10);
+      &_m {
+        @include width(8, 10, $middle);
+      }
+    }
+    &_9-10_tablet {
+      @include width(9, 10);
+      &_m {
+        @include width(9, 10, $middle);
+      }
+    }
+  }
+  // Phone
+  @include breakpoint(phone_s, phone) {
+    &_1_phone {
+      width: 100%;
+    }
+    &_1-12_phone {
+      @include width(1, 12);
+      &_m {
+        @include width(1, 12, $middle);
+      }
+    }
+    &_2-12_phone, &_1-6_phone {
+      @include width(2, 12);
+      &_m {
+        @include width(2, 12, $middle);
+      }
+    }
+    &_3-12_phone, &_1-4_phone {
+      @include width(3, 12);
+      &_m {
+        @include width(3, 12, $middle);
+      }
+    }
+    &_4-12_phone, &_1-3_phone {
+      @include width(4, 12);
+      &_m {
+        @include width(4, 12, $middle);
+      }
+    }
+    &_5-12_phone {
+      @include width(5, 12);
+      &_m {
+        @include width(5, 12, $middle);
+      }
+    }
+    &_6-12_phone, &_1-2_phone, &_5-10_phone {
+      @include width(1, 2);
+      &_m {
+        @include width(1, 2, $middle);
+      }
+    }
+    &_7-12_phone {
+      @include width(7, 12);
+      &_m {
+        @include width(7, 12, $middle);
+      }
+    }
+    &_8-12_phone, &_2-3_phone {
+      @include width(8, 12);
+      &_m {
+        @include width(8, 12, $middle);
+      }
+    }
+    &_9-12_phone, &_3-4_phone {
+      @include width(9, 12);
+      &_m {
+        @include width(5, 12, $middle);
+      }
+    }
+    &_10-12_phone, &_5-6_phone {
+      @include width(10, 12);
+      &_m {
+        @include width(10, 12, $middle);
+      }
+    }
+    &_11-12_phone {
+      @include width(11, 12);
+      &_m {
+        @include width(11, 12, $middle);
+      }
+    }
+    &_1-10_phone {
+      @include width(1, 10);
+      &_m {
+        @include width(1, 10, $middle);
+      }
+    }
+    &_2-10_phone, &_1-5_phone {
+      @include width(1, 5);
+      &_m {
+        @include width(1, 5, $middle);
+      }
+    }
+    &_3-10_phone {
+      @include width(3, 10);
+      &_m {
+        @include width(3, 10, $middle);
+      }
+    }
+    &_4-10_phone, &_2-5_phone {
+      @include width(4, 10);
+      &_m {
+        @include width(4, 10, $middle);
+      }
+    }
+    &_6-10_phone, &_3-5_phone {
+      @include width(6, 10);
+      &_m {
+        @include width(6, 10, $middle);
+      }
+    }
+    &_7-10_phone {
+      @include width(7, 10);
+      &_m {
+        @include width(7, 10, $middle);
+      }
+    }
+    &_8-10_phone, &_4-5_phone {
+      @include width(8, 10);
+      &_m {
+        @include width(8, 10, $middle);
+      }
+    }
+    &_9-10_phone {
+      @include width(9, 10);
+      &_m {
+        @include width(9, 10, $middle);
+      }
+    }
+  }
+  // Small phone
+  @include breakpoint(none, phone_s) {
+    &_1_phone_s {
+      width: 100%;
+    }
+    &_1-12_phone_s {
+      @include width(1, 12);
+      &_m {
+        @include width(1, 12, $middle);
+      }
+    }
+    &_2-12_phone_s, &_1-6_phone_s {
+      @include width(2, 12);
+      &_m {
+        @include width(2, 12, $middle);
+      }
+    }
+    &_3-12_phone_s, &_1-4_phone_s {
+      @include width(3, 12);
+      &_m {
+        @include width(3, 12, $middle);
+      }
+    }
+    &_4-12_phone_s, &_1-3_phone_s {
+      @include width(4, 12);
+      &_m {
+        @include width(4, 12, $middle);
+      }
+    }
+    &_5-12_phone_s {
+      @include width(5, 12);
+      &_m {
+        @include width(5, 12, $middle);
+      }
+    }
+    &_6-12_phone_s, &_1-2_phone_s, &_5-10_phone_s {
+      @include width(1, 2);
+      &_m {
+        @include width(1, 2, $middle);
+      }
+    }
+    &_7-12_phone_s {
+      @include width(7, 12);
+      &_m {
+        @include width(7, 12, $middle);
+      }
+    }
+    &_8-12_phone_s, &_2-3_phone_s {
+      @include width(8, 12);
+      &_m {
+        @include width(8, 12, $middle);
+      }
+    }
+    &_9-12_phone_s, &_3-4_phone_s {
+      @include width(9, 12);
+      &_m {
+        @include width(9, 12, $middle);
+      }
+    }
+    &_10-12_phone_s, &_5-6_phone_s {
+      @include width(10, 12);
+      &_m {
+        @include width(10, 12, $middle);
+      }
+    }
+    &_11-12_phone_s {
+      @include width(11, 12);
+      &_m {
+        @include width(11, 12, $middle);
+      }
+    }
+    &_1-10_phone_s {
+      @include width(1, 10);
+      &_m {
+        @include width(1, 10, $middle);
+      }
+    }
+    &_2-10_phone_s, &_1-5_phone_s {
+      @include width(1, 5);
+      &_m {
+        @include width(1, 5, $middle);
+      }
+    }
+    &_3-10_phone_s {
+      @include width(3, 10);
+      &_m {
+        @include width(3, 10, $middle);
+      }
+    }
+    &_4-10_phone_s, &_2-5_phone_s {
+      @include width(4, 10);
+      &_m {
+        @include width(4, 10, $middle);
+      }
+    }
+    &_6-10_phone_s, &_3-5_phone_s {
+      @include width(6, 10);
+      &_m {
+        @include width(6, 10, $middle);
+      }
+    }
+    &_7-10_phone_s {
+      @include width(7, 10);
+      &_m {
+        @include width(7, 10, $middle);
+      }
+    }
+    &_8-10_phone_s, &_4-5_phone_s {
+      @include width(8, 10);
+      &_m {
+        @include width(8, 10, $middle);
+      }
+    }
+    &_9-10_phone_s {
+      @include width(9, 10);
+      &_m {
+        @include width(9, 10, $middle);
+      }
+    }
+  }
+  // All phones
+  @include breakpoint(none, phone) {
+    &_1_phone_all {
+      width: 100%;
+    }
+    &_1-12_phone_all {
+      @include width(1, 12);
+      &_m {
+        @include width(1, 12, $middle);
+      }
+    }
+    &_2-12_phone_all, &_1-6_phone_all {
+      @include width(2, 12);
+      &_m {
+        @include width(2, 12, $middle);
+      }
+    }
+    &_3-12_phone_all, &_1-4_phone_all {
+      @include width(3, 12);
+      &_m {
+        @include width(3, 12, $middle);
+      }
+    }
+    &_4-12_phone_all, &_1-3_phone_all {
+      @include width(4, 12);
+      &_m {
+        @include width(4, 12, $middle);
+      }
+    }
+    &_5-12_phone_all {
+      @include width(5, 12);
+      &_m {
+        @include width(5, 12, $middle);
+      }
+    }
+    &_6-12_phone_all, &_1-2_phone_all, &_5-10_phone_all {
+      @include width(1, 2);
+      &_m {
+        @include width(1, 2, $middle);
+      }
+    }
+    &_7-12_phone_all {
+      @include width(7, 12);
+      &_m {
+        @include width(7, 12, $middle);
+      }
+    }
+    &_8-12_phone_all, &_2-3_phone_all {
+      @include width(8, 12);
+      &_m {
+        @include width(8, 12, $middle);
+      }
+    }
+    &_9-12_phone_all, &_3-4_phone_all {
+      @include width(9, 12);
+      &_m {
+        @include width(9, 12, $middle);
+      }
+    }
+    &_10-12_phone_all, &_5-6_phone_all {
+      @include width(10, 12);
+      &_m {
+        @include width(10, 12, $middle);
+      }
+    }
+    &_11-12_phone_all {
+      @include width(11, 12);
+      &_m {
+        @include width(11, 12, $middle);
+      }
+    }
+    &_1-10_phone_all {
+      @include width(1, 10);
+      &_m {
+        @include width(1, 10, $middle);
+      }
+    }
+    &_2-10_phone_all, &_1-5_phone_all {
+      @include width(1, 5);
+      &_m {
+        @include width(1, 5, $middle);
+      }
+    }
+    &_3-10_phone_all {
+      @include width(3, 10);
+      &_m {
+        @include width(3, 10, $middle);
+      }
+    }
+    &_4-10_phone_all, &_2-5_phone_all {
+      @include width(4, 10);
+      &_m {
+        @include width(4, 10, $middle);
+      }
+    }
+    &_6-10_phone_all, &_3-5_phone_all {
+      @include width(6, 10);
+      &_m {
+        @include width(6, 10, $middle);
+      }
+    }
+    &_7-10_phone_all {
+      @include width(7, 10);
+      &_m {
+        @include width(7, 10, $middle);
+      }
+    }
+    &_8-10_phone_all, &_4-5_phone_all {
+      @include width(8, 10);
+      &_m {
+        @include width(8, 10, $middle);
+      }
+    }
+    &_9-10_phone_all {
+      @include width(9, 10);
+      &_m {
+        @include width(9, 10, $middle);
+      }
+    }
+  }
+}
+// Responsive
+.hide {
+  // Desktops
+  @include breakpoint(mdpi, none) {
+    &_desktop {
+      display: none !important;
+    }
+  }
+  // Small PC
+  @include breakpoint(tablet, mdpi) {
+    &_mdpi {
+      display: none !important;
+    }
+  }
+  // Tablet
+  @include breakpoint(phone, tablet) {
+    &_tablet {
+      display: none !important;
+    }
+  }
+  // Phone
+  @include breakpoint(phone_s, phone) {
+    &_phone {
+      display: none !important;
+    }
+  }
+  // Small phone
+  @include breakpoint(none, phone_s) {
+    &_phone_s {
+      display: none !important;
+    }
+  }
+  // All phones
+  @include breakpoint(none, phone) {
+    &_phone_all {
+      display: none !important;
+    }
+  }
+}
+// User select
+.user-select_none {
+  @include user-select();
+}
+.user-drag_none {
+  @include user-drag();
+}
+// Pointer events
+.pointer-events {
+  &_none {
+    pointer-events: none;
+  }
+}
+// Table
+.table {
+  display: table;
+  .table__row {
+    display: table-row;
+    .table__row__cell {
+      display: table-cell;
+      padding: $size_xxs $size_xs;
+    }
+    &.table__row_head {
+    }
+  }
+}
+// Block
+.block {
+  display: block;
+}
+.block--mdpi {
+  @include breakpoint(tablet, mdpi) {
+    display: block;
+  }
+}
+.block--tablet {
+  @include breakpoint(phone, tablet) {
+    display: block;
+  }
+}
+.block--phone {
+  @include breakpoint(phone_s, phone) {
+    display: block;
+  }
+}
+.block--phone_s {
+  @include breakpoint(none, phone_s) {
+    display: block;
+  }
+}
+.block--phone_all {
+  @include breakpoint(none, phone) {
+    display: block;
+  }
+}
+.block-inline {
+  display: inline-block;
+}
+.block-inline--mdpi {
+  @include breakpoint(tablet, mdpi) {
+    display: inline-block;
+  }
+}
+.block-inline--tablet {
+  @include breakpoint(phone, tablet) {
+    display: inline-block;
+  }
+}
+.block-inline--phone {
+  @include breakpoint(phone_s, phone) {
+    display: inline-block;
+  }
+}
+.block-inline--phone_s {
+  @include breakpoint(none, phone_s) {
+    display: inline-block;
+  }
+}
+.block-inline--phone_all {
+  @include breakpoint(none, phone) {
+    display: inline-block;
+  }
+}
+// Flex row
+.row {
+  @include flex-row();
+}
+.row--mdpi {
+  @include breakpoint(tablet, mdpi) {
+    @include flex-row();
+  }
+}
+.row--tablet {
+  @include breakpoint(phone, tablet) {
+    @include flex-row();
+  }
+}
+.row--phone {
+  @include breakpoint(phone_s, phone) {
+    @include flex-row();
+  }
+}
+.row--phone_s {
+  @include breakpoint(none, phone_s) {
+    @include flex-row();
+  }
+}
+.row--phone_all {
+  @include breakpoint(none, phone) {
+    @include flex-row();
+  }
+}
+.row-reverse {
+  @include flex-row-reversed();
+}
+.row-reverse--mdpi {
+  // MDPI only
+  @include breakpoint(tablet, mdpi) {
+    @include flex-row-reversed();
+  }
+}
+.row-reverse--tablet {
+  // Tablet only
+  @include breakpoint(phone, tablet) {
+    @include flex-row-reversed();
+  }
+}
+.row-reverse--phone {
+  // Phone only
+  @include breakpoint(phone, tablet) {
+    @include flex-row-reversed();
+  }
+}
+.row-reverse--phone_s {
+  // Small phone only
+  @include breakpoint(phone_s, phone) {
+    @include flex-row-reversed();
+  }
+}
+.row-reverse--phone_all {
+  // All phones only
+  @include breakpoint(none, phone) {
+    @include flex-row-reversed();
+  }
+}
+.row-inline {
+  @include inline-flex();
+}
+// Flex column
+.col {
+  @include flex-column();
+}
+.col--desktop {
+  @include breakpoint(mdpi, none) {
+    @include flex-column();
+  }
+}
+.col--mdpi {
+  @include breakpoint(tablet, mdpi) {
+    @include flex-column(true);
+  }
+}
+.col--tablet {
+  @include breakpoint(phone, tablet) {
+    @include flex-column(true);
+  }
+}
+.col--phone {
+  @include breakpoint(phone_s, phone) {
+    @include flex-column(true);
+  }
+}
+.col--phone_s {
+  @include breakpoint(none, phone_s) {
+    @include flex-column(true);
+  }
+}
+.col--phone_all {
+  @include breakpoint(none, phone) {
+    @include flex-column(true);
+  }
+}
+.col-reverse {
+  @include flex-column-reversed();
+}
+.col-reverse--mdpi {
+  // MDPI only
+  @include breakpoint(tablet, mdpi) {
+    @include flex-column-reversed();
+  }
+}
+.col-reverse--tablet {
+  // Tablet only
+  @include breakpoint(phone, tablet) {
+    @include flex-column-reversed();
+  }
+}
+.col-reverse--phone {
+  // Phone only
+  @include breakpoint(phone, tablet) {
+    @include flex-column-reversed();
+  }
+}
+.col-reverse--phone_s {
+  // Small phone only
+  @include breakpoint(phone_s, phone) {
+    @include flex-column-reversed();
+  }
+}
+.col-reverse--phone_all {
+  // All phones only
+  @include breakpoint(none, phone) {
+    @include flex-column-reversed();
+  }
+}
+.col-inline {
+  @include inline-flex-column();
+}
+// Flex parameters
+.flex {
+  &_wrap {
+    @include flex-wrap();
+  }
+  &_wrap_reverse {
+    @include flex-wrap(wrap-reverse)
+  }
+  &_center {
+    justify-content: center;
+  }
+  &_space-between {
+    justify-content: space-between;
+  }
+  &_start {
+    justify-content: flex-start;
+  }
+  &_end {
+    justify-content: flex-end;
+  }
+  &_space-around {
+    justify-content: space-around;
+  }
+  &_align-items_center {
+    align-items: center;
+  }
+  &_align-items_start {
+    align-items: flex-start;
+  }
+  &_align-items_end {
+    align-items: flex-end;
+  }
+  // Tablet only
+  @include breakpoint(phone, tablet) {
+    &_wrap_tablet {
+      @include flex-wrap();
+    }
+    &_wrap_reverse_tablet {
+      @include flex-wrap(wrap-reverse)
+    }
+    &_center_tablet {
+      justify-content: center;
+    }
+    &_start_tablet {
+      justify-content: flex-start;
+    }
+    &_end_tablet {
+      justify-content: flex-end;
+    }
+    &_space-around_tablet {
+      justify-content: space-around;
+    }
+    &_align-items_center_tablet {
+      align-items: center;
+    }
+    &_align-items_start_tablet {
+      align-items: flex-start;
+    }
+    &_align-items_end_tablet {
+      align-items: flex-end;
+    }
+  }
+  // Phone only
+  @include breakpoint(phone_s, phone) {
+    &_wrap_phone {
+      @include flex-wrap();
+    }
+    &_wrap_reverse_phone {
+      @include flex-wrap(wrap-reverse)
+    }
+    &_center_phone {
+      justify-content: center;
+    }
+    &_start_phone {
+      justify-content: flex-start;
+    }
+    &_end_phone {
+      justify-content: flex-end;
+    }
+    &_space-around_phone {
+      justify-content: space-around;
+    }
+    &_align-items_center_phone {
+      align-items: center;
+    }
+    &_align-items_start_phone {
+      align-items: flex-start;
+    }
+    &_align-items_end_phone {
+      align-items: flex-end;
+    }
+  }
+  // Small phones only
+  @include breakpoint(none, phone_s) {
+    &_wrap_phone_s {
+      @include flex-wrap();
+    }
+    &_wrap_reverse_phone_s {
+      @include flex-wrap(wrap-reverse)
+    }
+    &_center_phone_s {
+      justify-content: center;
+    }
+    &_start_phone_s {
+      justify-content: flex-start;
+    }
+    &_end_phone_s {
+      justify-content: flex-end;
+    }
+    &_space-around_phone_s {
+      justify-content: space-around;
+    }
+    &_align-items_center_phone_s {
+      align-items: center;
+    }
+    &_align-items_start_phone_s {
+      align-items: flex-start;
+    }
+    &_align-items_end_phone_s {
+      align-items: flex-end;
+    }
+  }
+  // All phones
+  @include breakpoint(none, phone) {
+    &_wrap_phone_all {
+      @include flex-wrap();
+    }
+    &_wrap_reverse_phone_all {
+      @include flex-wrap(wrap-reverse)
+    }
+    &_center_phone_all {
+      justify-content: center;
+    }
+    &_start_phone_all {
+      justify-content: flex-start;
+    }
+    &_end_phone_all {
+      justify-content: flex-end;
+    }
+    &_space-around_phone_all {
+      justify-content: space-around;
+    }
+    &_align-items_center_phone_all {
+      align-items: center;
+    }
+    &_align-items_start_phone_all {
+      align-items: flex-start;
+    }
+    &_align-items_end_phone_all {
+      align-items: flex-end;
+    }
+  }
+}
+// Button
+.btn {
+  cursor:          pointer;
+  display:         inline-block;
+  font-family:     $font_primary;
+  font-size:       1rem;
+  line-height:     1rem;
+  text-decoration: none;
+  padding:         0;
+  border-radius:   0;
+  border:          none;
+  outline:         none;
+  box-shadow:      none;
+  background:      none;
+  color:           $color_black;
+  @include user-select;
+  @include appearance(none);
+  @include transition($transition_in);
+  .btn__icon {
+    @include flex-row();
+    justify-content: center;
+    align-items:     center;
+    font-style:      normal;
+    > svg {
+      display:        inline-block;
+      vertical-align: middle;
+      min-width:      1.25rem;
+      width:          1.25rem;
+      height:         1.25rem;
+      margin-right:   $size_xxs;
+      fill:           $color_black;
+      @include transition(fill $transition_in_duration $transition_in_function);
+      &:last-child, &:only-child {
+        margin-right: 0;
+      }
+    }
+    .btn__icon__text {
+    }
+    &.btn__icon_right {
+      > svg {
+        margin-right: 0;
+        margin-left:  $size_xxs;
+      }
+    }
+  }
+  // Default .btn
+  &.btn_default {
+    font-weight: 500;
+    color:       $color_black;
+    background:  $color_white-dark;
+    border:      1px solid $color_gray;
+    padding:     $size_xxs $size_m;
+    min-width:   100px;
+    text-align:  center;
+    &:hover {
+      background:   $color_gray-dark;
+      border-color: $color_gray-dark;
+      color:        $color_white;
+      @include transition($transition_out);
+      .btn__icon {
+        > svg {
+          fill: $color_white;
+          @include transition(fill $transition_out_duration $transition_out_function);
+        }
+      }
+    }
+    &:focus {
+      background:   $color_black;
+      border-color: $color_black;
+      color:        $color_white;
+      @include transition($transition_out);
+      .btn__icon {
+        > svg {
+          fill: $color_white;
+          @include transition(fill $transition_out_duration $transition_out_function);
+        }
+      }
+    }
+    &.btn_disabled, &.btn_disabled:hover, &.btn_disabled:focus, &:disabled {
+      pointer-events: none !important;
+      cursor:         not-allowed !important;
+      color:          $color_gray-medium !important;
+      border-color:   $color_gray-light !important;
+      background:     $color_gray-light !important;
+      .btn__icon {
+        > svg {
+          fill: $color_gray-medium !important;
+        }
+      }
+    }
+    &.btn_success, &.btn_success:focus, &.btn_success:hover {
+      pointer-events: none !important;
+      background:     $color-green !important;
+      color:          $color_white !important;
+      border-color:   $color_green !important;
+      .btn__icon {
+        > svg {
+          fill: $color_white !important;
+        }
+      }
+    }
+    &.btn_error, &.btn_error:focus, &.btn_error:hover {
+      pointer-events: none !important;
+      background:     $color_red !important;
+      color:          $color_white !important;
+      border-color:   $color_red !important;
+      .btn__icon {
+        > svg {
+          fill: $color_white !important;
+        }
+      }
+    }
+  }
+  // Stroke .btn
+  &.btn_stroke {
+    // TODO Create styles
+  }
+  // Burger .btn
+  &.btn_burger {
+    position:   relative;
+    min-width:  50px;
+    width:      50px;
+    height:     50px;
+    background: transparent;
+    .btn_burger__line, .btn_burger__line::before, .btn_burger__line::after {
+      display:          block;
+      width:            30px;
+      height:           3px;
+      background-color: $color_black;
+      outline:          none;
+      @include transition-property(background-color, transform);
+      @include transition-duration(0.3s);
+    }
+    .btn_burger__line {
+      margin-bottom: 9px;
+      position:      absolute;
+      top:           50%;
+      left:          50%;
+      margin-left:   -15px;
+      margin-top:    -1.5px;
+      &:before, &:after {
+        position: absolute;
+        content:  ""
+      }
+      &:before {
+        top: -9px;
+      }
+      &:after {
+        top: 9px;
+      }
+    }
+    &.btn_burger_active, &:active {
+      z-index: 10;
+      .btn_burger__line {
+        background: transparent;
+        &:before, &:after {
+          background: $color_black;
+        }
+        &:before {
+          @include transform(translateY(9px) rotate(45deg))
+        }
+        &:after {
+          @include transform(translateY(-9px) rotate(-45deg));
+        }
+      }
+    }
+  }
+  // Close .btn
+  &.btn_close, &.btn_cross {
+    position:  relative;
+    min-width: 50px;
+    width:     50px;
+    height:    50px;
+    &:before, &:after {
+      content:    '';
+      position:   absolute;
+      width:      100%;
+      top:        50%;
+      left:       0;
+      background: $color_black;
+      height:     4px;
+      margin-top: -2px;
+      @include transition(background $transition_in_function $transition_in_duration);
+    }
+    &:before {
+      @include transform(rotate(45deg));
+    }
+    &:after {
+      @include transform(rotate(-45deg));
+    }
+    &:hover {
+      &:before, &:after {
+        background: $color_primary;
+        @include transition(background $transition_out_function $transition_out_duration);
+      }
+    }
+    &:focus {
+      &:before, &:after {
+        background: $color_primary_dark;
+        @include transition(background $transition_out_function $transition_out_duration);
+      }
+    }
+    &:disabled, &.btn_disabled {
+      pointer-events: none;
+      &:before, &:after {
+        background: $color_gray;
+      }
+    }
+  }
+  // Chevron .btn
+  &.btn_chevron {
+    $chevron_size: 30px;
+    position:      relative;
+    display:       inline-block;
+    min-width:     $chevron_size;
+    width:         $chevron_size;
+    height:        $chevron_size;
+    border-width:  2px 2px 0 0;
+    border-color:  $color_black;
+    border-style:  solid;
+    background:    transparent;
+    &.btn_chevron_left {
+      @include transform(rotate(-135deg));
+    }
+    &.btn_chevron_right {
+      @include transform(rotate(45deg));
+    }
+    &.btn_chevron_top {
+      @include transform(rotate(-45deg));
+    }
+    &.btn_chevron_bottom {
+      @include transform(rotate(135deg));
+    }
+    &:hover {
+      border-color: $color_primary;
+    }
+    &:focus {
+      border-color: $color_primary-dark;
+    }
+    &:disabled, &.btn_disabled {
+      pointer-events: none;
+      border-color:   $color_gray;
+    }
+  }
+  // Plus & minus .btn
+  &.btn_plus, &.btn_minus {
+    min-width: 22px;
+    width:     22px;
+    height:    22px;
+    position:  relative;
+    &:before, &:after {
+      content:          '';
+      position:         absolute;
+      background-color: $color_black;
+      @include transition($transition_in);
+    }
+    &:after {
+      top:         50%;
+      left:        0;
+      width:       100%;
+      height:      2px;
+      margin-top:  -1px;
+      margin-left: 0;
+    }
+  }
+  &.btn_plus {
+    &:before {
+      top:         0;
+      left:        50%;
+      width:       2px;
+      height:      100%;
+      margin-left: 0;
+    }
+  }
+  // Icon
+  &.btn_icon {
+    .btn__icon {
+      > svg {
+        min-width: 2rem;
+        width:     2rem;
+        height:    2rem;
+      }
+    }
+    &:hover {
+      .btn__icon {
+        > svg {
+          fill: $color_primary;
+        }
+      }
+    }
+    &:focus {
+      .btn__icon {
+        > svg {
+          fill: $color_secondary;
+        }
+      }
+    }
+    &:disabled, &.btn_disabled {
+      pointer-events: none;
+      .btn__icon {
+        > svg {
+          fill: $color_gray;
+        }
+      }
+    }
+  }
+}
+// Image
+.img {
+  > img, > svg {
+    display: block;
+    margin:  0;
+  }
+  &.img_left {
+    > img, > svg {
+      margin: 0;
+    }
+  }
+  &.img_center {
+    > img, > svg {
+      margin: 0 auto;
+    }
+  }
+  &.img_right {
+    > img, > svg {
+      margin: 0 0 0 auto;
+    }
+  }
+  &.img_overflow {
+    overflow: hidden;
+    > img, > svg {
+      max-width:  unset;
+      max-height: unset;
+    }
+  }
+  // Small PC
+  @include breakpoint(tablet, mdpi) {
+    &.img_center_mdpi {
+      > img, > svg {
+        margin: 0 auto;
+      }
+    }
+  }
+  // Tablet
+  @include breakpoint(phone, tablet) {
+    &.img_center_tablet {
+      > img, > svg {
+        margin: 0 auto;
+      }
+    }
+  }
+  // Phone
+  @include breakpoint(phone_s, phone) {
+    &.img_center_phone {
+      > img, > svg {
+        margin: 0 auto;
+      }
+    }
+  }
+  // Small phone
+  @include breakpoint(none, phone_s) {
+    &.img_center_phone_s {
+      > img, > svg {
+        margin: 0 auto;
+      }
+    }
+  }
+  // All phones
+  @include breakpoint(none, phone) {
+    &.img_center_phone_all {
+      > img, > svg {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+// Header
+.header {
+  padding: $size_xs 0;
+  .header__wrapper {
+    width:  $width;
+    margin: 0 auto;
+  }
+  .header__logo {
+    display: block;
+    &.img {
+      > img, > svg {
+        height: 50px;
+      }
+    }
+  }
+  .header__menu {
+    @include flex-row();
+    height: 55px;
+    .header__menu__item {
+      @include flex-column();
+      justify-content: center;
+      text-decoration: none;
+      margin-right:    $size_xs;
+      height:          100%;
+      &.header__menu__item_active {
+        pointer-events: none;
+      }
+      &:last-child, &:only-child {
+        margin-right: 0;
+      }
+    }
+    &.header__menu_col {
+      @include flex-column();
+      height: auto;
+      .header__menu__item {
+        @include flex-row();
+        justify-content: flex-start;
+        margin-right:    0;
+        margin-bottom:   $size_xxs;
+        height:          auto;
+        &:last-child, &:only-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &.header_fixed {
+    position: fixed;
+    top:      0;
+    left:     0;
+    right:    0;
+    z-index:  9;
+    @include transition(all .25s ease);
+    &.header_fixed_hidden {
+      @include transform(translateY(-100%));
+    }
+  }
+  &.header_fixed_side, &.header_fixed_side_left {
+    $header_fixed_side_size: 75px;
+    position:                fixed;
+    top:                     0;
+    left:                    0;
+    bottom:                  0;
+    background:              $color_white;
+    padding:                 0;
+    width:                   $header_fixed_side_size;
+    box-shadow:              $box_shadow_xs;
+    z-index:                 10;
+    .header__wrapper {
+      @extend .col;
+      @extend .flex_space-between;
+      width:  100%;
+      height: 100%;
+      .header__logo {
+        &.img {
+          > img, > svg {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+// Wrapper
+.wrapper {
+}
+// Footer
+.footer {
+  padding: $size_s 0;
+  .footer__wrapper {
+    width:  $width;
+    margin: 0 auto;
+  }
+}
+// Copyright
+.copyright {
+  margin: $size_xl auto $size_m auto;
+  > a {
+    display: block;
+    width:   100%;
+    opacity: .6;
+    @include transition($transition_in);
+    > img {
+      display: block;
+      margin:  0 auto;
+      height:  28px;
+    }
+    &:hover {
+      @include transition($transition_out);
+      opacity: .9;
+    }
+    &:focus {
+      @include transition($transition_out);
+      opacity: 1;
+      outline: none;
+    }
+  }
+}
+// Section
+.section {
+  padding: $size_xxl 0 $size_l 0;
+  .section__wrapper {
+    width:  $width;
+    margin: 0 auto;
+  }
+  .section__heading {
+    margin-bottom: $size_l;
+    .section__heading__uptitle {
+      margin-bottom: $size_s;
+    }
+    .section__heading__title {
+    }
+    .section__heading__subtitle {
+      margin-top: $size_s;
+    }
+    &.section__heading_center {
+      margin-left:  auto;
+      margin-right: auto;
+      text-align:   center;
+    }
+    &:only-child {
+      margin-bottom: 0;
+    }
+  }
+  &.section_full-height {
+    min-height: 100vh;
+    padding:    0;
+  }
+  &.section_full-width {
+    .section__wrapper {
+      width: 100%;
+    }
+  }
+  &.section_full-page {
+    padding: 0;
+    width:   100vw;
+    height:  100vh;
+  }
+  &.section_bg-cover {
+    background-position: center;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+  }
+}
+// Inputs
+.input_text {
+  position:               relative;
+  $input_text__input_in:  border-color .25s ease;
+  $input_text__input_out: border-color .1s linear;
+  $input_text__icon_in:   fill .25s ease;
+  $input_text__icon_out:  fill .1s linear;
+  .input_text__label {
+    display:       block;
+    margin-bottom: $size_xxxs;
+    font-weight:   500;
+  }
+  .input_text__input {
+    display:     block;
+    width:       100%;
+    font-family: $font_primary;
+    border:      1px solid $color_gray-light;
+    padding:     $size_xs;
+    background:  $color_white;
+    color:       $color_black-light;
+    font-size:   1rem;
+    line-height: normal !important;
+    @include appearance(none);
+    @include transition($input_text__input_in);
+    @include placeholder() {
+      color:       $color_gray;
+      line-height: normal !important;
+      font-size:   1rem;
+    }
+    &:hover {
+      border-color: $color_gray;
+      @include transition($input_text__input_out);
+    }
+    &:focus {
+      outline:      none;
+      border-color: $color_gray-medium;
+      @include transition($input_text__input_out);
+      &:invalid {
+        border-color: $color_red;
+      }
+      &:valid {
+        border-color: $color_green;
+      }
+    }
+    &:disabled, &:read-only {
+      cursor:         not-allowed;
+      pointer-events: none;
+      background:     $color_white-dark;
+      border-color:   $color_gray-light;
+      color:          $color_gray-medium;
+    }
+  }
+  &.input_text_row {
+    @include flex-row();
+    align-items: center;
+    .input_text__label {
+      margin-right:  $size_s;
+      margin-bottom: 0;
+    }
+    .input_text__input {
+      width: 100%;
+    }
+  }
+  &.input_text_icon {
+    .input_text__input {
+      padding-left: calc(#{$size_xs} + 20px + #{$size_xxxs});
+      &:hover {
+        ~ .input_text__icon {
+          > svg {
+            fill: $color_gray;
+            @include transition($input_text__icon_out);
+          }
+        }
+      }
+      &:focus {
+        ~ .input_text__icon {
+          > svg {
+            fill: $color_gray-medium;
+            @include transition($input_text__icon_out);
+          }
+        }
+      }
+      &:disabled, &:read-only {
+        ~ .input_text__icon {
+          > svg {
+            fill: $color_gray;
+          }
+        }
+      }
+    }
+  }
+  &.input_text_fixed_width {
+    .input_text__input {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+  .input_text__wrapper {
+    position: relative;
+  }
+  .input_text__icon {
+    position:    absolute;
+    top:         calc(50% - 10px);
+    left:        10px;
+    width:       20px;
+    height:      20px;
+    line-height: normal !important;
+    > svg {
+      fill: $color_gray;
+      @include transition($input_text__icon_in);
+    }
+  }
+}
+.input_radio, .input_checkbox {
+  @include flex-row();
+  @include flex-wrap();
+  @include user-select();
+  .input_radio__title, .input_checkbox__title {
+    width:         100%;
+    margin-bottom: $size_xs;
+    font-weight:   500;
+  }
+  .input_radio__item, .input_checkbox__item {
+    margin-right:  $size_xs;
+    margin-bottom: $size_xs;
+    .input_radio__item__input, .input_checkbox__item__input {
+      position: absolute;
+      opacity:  0;
+      cursor:   pointer;
+      height:   0;
+      width:    0;
+      margin:   0;
+      &:hover ~ .input_radio__item__title, &:hover ~ .input_checkbox__item__title {
+        background: $color_gray-light;
+        @include transition($transition_out);
+      }
+      &:checked ~ .input_radio__item__title, &:checked ~ .input_checkbox__item__title {
+        background: $color_black;
+        color:      $color_white;
+        @include transition($transition_out);
+      }
+      &:disabled {
+        cursor:         not-allowed;
+        pointer-events: none;
+        ~ .input_radio__item__title, ~ .input_checkbox__item__title {
+          cursor:     not-allowed;
+          background: $color_gray-light;
+          color:      $color_gray-medium;
+        }
+      }
+      &:disabled:checked ~ .input_radio__item__title, &:disabled:checked ~ .input_checkbox__item__title {
+        background: $color_gray-dark;
+        color:      $color_gray;
+      }
+    }
+    .input_radio__item__title, .input_checkbox__item__title {
+      padding:     $size_xxxs;
+      white-space: nowrap;
+      @include transition($transition_in);
+    }
+  }
+}
+.input_file {
+  $input_file__input_in:  border-color .25s ease;
+  $input_file__input_out: border-color .1s linear;
+  $input_file__icon_in:   fill .25s ease;
+  $input_file__icon_out:  fill .1s linear;
+  .input_file__title {
+    display:       block;
+    margin-bottom: $size_xxxs;
+    font-weight:   500;
+  }
+  .input_file__wrap {
+    position: relative;
+  }
+  .input_file__input {
+    &:focus {
+      &:valid {
+        + .input_file__label {
+          border-color: $color_green;
+        }
+      }
+      &:invalid {
+        + .input_file__label {
+          border-color: $color_red;
+        }
+      }
+    }
+    &:valid {
+      + .input_file__label {
+        color: $color_black;
+      }
+    }
+    &:disabled, &:read-only {
+      pointer-events: none;
+      + .input_file__label {
+        cursor:       not-allowed;
+        background:   $color_white-dark;
+        border-color: $color_gray-light;
+        color:        $color_gray-medium;
+      }
+    }
+  }
+  .input_file__label {
+    cursor:      pointer;
+    display:     block;
+    width:       100%;
+    font-family: $font_primary;
+    border:      1px solid $color_gray-light;
+    padding:     $size_xs;
+    background:  $color_white;
+    color:       $color_gray;
+    font-size:   1rem;
+    line-height: normal !important;
+    @include appearance(none);
+    @include transition($input_file__input_in);
+    &:hover {
+      border-color: $color_gray;
+      @include transition($input_file__input_out);
+    }
+    &:focus {
+      border-color: $color_gray-medium;
+      @include transition($input_file__input_out);
+    }
+  }
+  .input_file__input {
+    position: absolute;
+    opacity:  0;
+    cursor:   pointer;
+    height:   0;
+    width:    0;
+    margin:   0;
+  }
+}
+.input_switch {
+  position: relative;
+  .input_switch__label {
+    display:       block;
+    margin-bottom: $size_xxs;
+    font-weight:   500;
+  }
+  .input_switch__wrap {
+    @include flex-row();
+    align-items: center;
+  }
+  .input_switch__text {
+    &:first-child {
+      margin-right: $size_xxs;
+    }
+    &:last-child {
+      margin-left: $size_xxs;
+    }
+  }
+  .input_switch__input {
+    height:     0;
+    width:      0;
+    visibility: hidden;
+    top:        0;
+    left:       0;
+    position:   absolute;
+    &:checked {
+      + .input_switch__widget {
+        background: $color_green;
+        &:after {
+          left:      calc(100% - 0.1rem);
+          transform: translateX(-100%);
+        }
+      }
+    }
+    &:disabled {
+      cursor:         not-allowed;
+      pointer-events: none;
+      + .input_switch__widget {
+        cursor:     not-allowed;
+        background: $color_gray-medium;
+      }
+      &:checked {
+        + .input_switch__widget {
+          background: $color_green-dark;
+        }
+      }
+    }
+  }
+  .input_switch__widget {
+    cursor:        pointer;
+    text-indent:   -9999px;
+    width:         4rem;
+    height:        2rem;
+    background:    $color_gray-light;
+    display:       block;
+    position:      relative;
+    border-radius: 2.8rem;
+    &:after {
+      content:       '';
+      position:      absolute;
+      top:           0.1rem;
+      left:          0.1rem;
+      width:         1.8rem;
+      height:        1.8rem;
+      background:    $color_white;
+      @include transition(.3s);
+      border-radius: 0.9rem;
+    }
+    &:active {
+      &:after {
+        width: 2rem;
+      }
+    }
+  }
+}
+// Tooltip
+[data-sanity_ui_tooltip] {
+  position: relative;
+  &:before, &:after {
+    pointer-events: none;
+    position:       absolute;
+    display:        none;
+    opacity:        0;
+    @include user-select();
+    @include transition($transition_in);
+  }
+  &:before {
+    content: '';
+    border:  5px solid transparent;
+    z-index: 1001;
+  }
+  &:after {
+    content:       attr(data-sanity_ui_tooltip);
+    font-family:   $font_primary;
+    text-align:    center;
+    min-width:     3em;
+    max-width:     21em;
+    white-space:   nowrap;
+    overflow:      hidden;
+    text-overflow: ellipsis;
+    padding:       $size_xxs $size_xs;
+    border-radius: $border-radius_xs;
+    box-shadow:    $box-shadow_s;
+    background:    $color_black-light;
+    color:         $color_white;
+    z-index:       1000;
+  }
+  &:hover {
+    &:before, &:after {
+      display: block;
+      @include transition($transition_out);
+    }
+  }
+  // Up tooltip + default
+  &:not([data-sanity_ui_tooltip_flow])::before,
+  &[data-sanity_ui_tooltip_flow^="up"]::before {
+    bottom:              100%;
+    border-bottom-width: 0;
+    border-top-color:    $color_black-light;
+  }
+  &:not([data-sanity_ui_tooltip_flow])::after,
+  &[data-sanity_ui_tooltip_flow^="up"]::after {
+    bottom: calc(100% + 5px);
+  }
+  &:not([data-sanity_ui_tooltip_flow])::before,
+  &:not([data-sanity_ui_tooltip_flow])::after,
+  &[data-sanity_ui_tooltip_flow^="up"]::before,
+  &[data-sanity_ui_tooltip_flow^="up"]::after {
+    left: 50%;
+    @include transform(translate(-50%, -.5em));
+  }
+  // Down tooltip
+  &[data-sanity_ui_tooltip_flow^="down"]::before {
+    top:                 100%;
+    border-top-width:    0;
+    border-bottom-color: $color_black-light;
+  }
+  &[data-sanity_ui_tooltip_flow^="down"]::after {
+    top: calc(100% + 5px);
+  }
+  &[data-sanity_ui_tooltip_flow^="down"]::before,
+  &[data-sanity_ui_tooltip_flow^="down"]::after {
+    left: 50%;
+    @include transform(translate(-50%, 10px));
+  }
+  // Left tooltip
+  &[data-sanity_ui_tooltip_flow^="left"]::before {
+    top:                50%;
+    border-right-width: 0;
+    border-left-color:  $color_black-light;
+    left:               calc(0em - 5px);
+    @include transform(translate(-10px, -50%));
+  }
+  &[data-sanity_ui_tooltip_flow^="left"]::after {
+    top:   50%;
+    right: calc(100% + 5px);
+    @include transform(translate(-10px, -50%));
+  }
+  // Right tooltip
+  &[data-sanity_ui_tooltip_flow^="right"]::before {
+    top:                50%;
+    border-left-width:  0;
+    border-right-color: $color_black-light;
+    right:              calc(0em - 5px);
+    @include transform(translate(10px, -50%));
+  }
+  &[data-sanity_ui_tooltip_flow^="right"]::after {
+    top:  50%;
+    left: calc(100% + 5px);
+    @include transform(translate(10px, -50%));
+  }
+  // Animation
+  @include keyframe(sanity_tooltip_vertical) {
+    to {
+      opacity: .9;
+      @include transform(translate(-50%, 0));
+    }
+  }
+  @include keyframe(sanity_tooltip_horizontal) {
+    to {
+      opacity: .9;
+      @include transform(translate(0, -50%));
+    }
+  }
+  // Bind animation
+  &:not([data-sanity_ui_tooltip_flow]):hover::before,
+  &:not([data-sanity_ui_tooltip_flow]):hover::after,
+  &[data-sanity_ui_tooltip_flow^="up"]:hover::before,
+  &[data-sanity_ui_tooltip_flow^="up"]:hover::after,
+  &[data-sanity_ui_tooltip_flow^="down"]:hover::before,
+  &[data-sanity_ui_tooltip_flow^="down"]:hover::after {
+    @include animation(sanity_tooltip_vertical, 0ms, 300ms, ease-out, forwards);
+    //animation: sanity_tooltip_vertical 300ms ease-out forwards;
+  }
+  &[data-sanity_ui_tooltip_flow^="left"]:hover::before,
+  &[data-sanity_ui_tooltip_flow^="left"]:hover::after,
+  &[data-sanity_ui_tooltip_flow^="right"]:hover::before,
+  &[data-sanity_ui_tooltip_flow^="right"]:hover::after {
+    @include animation(sanity_tooltip_horizontal, 0ms, 300ms, ease-out, forwards);
+  }
+}
+[data-sanity_ui_tooltip=""] {
+  &:before, &:after {
+    display: none !important;
+  }
+}
+// Loader
+.loader {
+  @include flex-column();
+  justify-content: center;
+  align-items:     center;
+  width:           50px;
+  height:          50px;
+  margin:          0 auto;
+  &:after {
+    content:       " ";
+    display:       block;
+    width:         32px;
+    height:        32px;
+    margin:        6px;
+    border-radius: 50%;
+    border:        4px solid;
+    border-color:  $color_black transparent $color_black transparent;
+    @include animation_string(loader 1.2s linear infinite);
+  }
+  @include keyframe(loader) {
+    0% {
+      @include transform(0deg);
+    }
+    100% {
+      @include transform(rotate(360deg));
+    }
+  }
+}
+// Scrollbar
+.scrollbar {
+  @include scrollbar(10px, $color_gray-light, $color_black, $color_black-light);
+}
