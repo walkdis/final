@@ -1,4 +1,3 @@
-# Diploma Anna Simakova aka walkdis 2020
 # set environment variables PYTHONHASHSEED=0
 import os
 
